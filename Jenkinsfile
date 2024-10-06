@@ -26,7 +26,7 @@ pipeline {
               sudo chown root:docker /var/run/docker.sock
               sudo chmod 660 /var/run/docker.sock
               docker build -t $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG .
-              sudo docker run -d -p 8000:8000 --name jenkins $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
+              sudo docker run -d -p 8001:8001 --name jenkins $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
               '''
             }
           }
