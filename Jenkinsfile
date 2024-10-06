@@ -20,7 +20,7 @@ pipeline {
           steps{
             script {
               sh '''
-              docker rm -u root -f jenkins
+              # docker rm -f jenkins
               docker build -u root -t $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG .
               docker run -u root -d -p 8000:8000 --name jenkins $DOCKER_ID/$DOCKER_IMAGE:$DOCKER_TAG
               '''
